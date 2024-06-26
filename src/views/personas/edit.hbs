@@ -1,0 +1,109 @@
+<div class="grid-container p-4">
+    <div class="card text-center">
+        <div class="card-header">
+            <h3 class="text-uppercase">Editando una persona</h3>
+        </div>
+
+        <div class="card-body">
+            <form action="/edit/{{persona.id}}" method="post">
+                {{! Nombre }}
+                <div class="input-group mt-2">
+                    <label for="name" class="input-group-text">Nombre</label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Ejemplo: Victor"
+                        autofocus
+                        required
+                        class="form-control"
+                        value="{{persona.name}}"
+                    />
+                </div>
+                {{! Apellido }}
+                <div class="input-group mt-2">
+                    <label
+                        for="lastname"
+                        class="input-group-text"
+                    >Apellido</label>
+                    <input
+                        type="text"
+                        name="lastname"
+                        id="lastname"
+                        placeholder="Ejemplo: Alvarez"
+                        required
+                        class="form-control"
+                        value="{{persona.lastname}}"
+                    />
+                </div>
+                {{! Edad }}
+                <div class="input-group mt-2">
+                    <label for="age" class="input-group-text">Edad</label>
+                    <input
+                        type="number"
+                        name="age"
+                        id="age"
+                        placeholder="Ejemplo: 26"
+                        autofocus
+                        required
+                        class="form-control"
+                        max="99"
+                        min="1"
+                        step="1"
+                        value="{{persona.age}}"
+                    />
+                </div>
+                {{! Correo }}
+                <div class="input-group mt-2">
+                    <label for="email" class="input-group-text">Correo</label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Ejemplo: alvarez3197@gmail.com"
+                        required
+                        class="form-control"
+                        value="{{persona.email}}"
+                    />
+                </div>
+                {{! Telefono }}
+                <div class="input-group mt-2">
+                    <label for="phone" class="input-group-text">Teléfono</label>
+                    <input
+                        type="text"
+                        name="phone"
+                        id="phone"
+                        placeholder="Ejemplo: 00000000"
+                        required
+                        class="form-control"
+                        value="{{persona.phone}}"
+                    />
+                </div>
+                {{! Cumple }}
+                <div class="input-group mt-2">
+                    <label
+                        for="birthdate"
+                        class="input-group-text"
+                    >Cumpleaños</label>
+                    <input
+                        type="date"
+                        name="birthdate"
+                        id="birthdate"
+                        placeholder="Ejemplo: 31/12/1997"
+                        required
+                        class="form-control"
+                        value="{{persona.birthdate}}"
+                    />
+                </div>
+
+                <div class="form-group mt-4 d-grid gap-2">
+                    <button class="btn btn-success">Actualizar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .grid-container { display: grid; place-items: center; padding: 16px; }
+</style>
